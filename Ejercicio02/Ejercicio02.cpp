@@ -28,18 +28,15 @@ private:
 
 public:
 
-    // Constructor
     ListaDoble() {
         inicio = nullptr;
         fin = nullptr;
     }
 
-    // Insertar elemento al final
     void insertar(int valor) {
 
         Nodo* nuevo = new Nodo(valor);
 
-        // Si la lista esta vacia
         if (inicio == nullptr) {
             inicio = nuevo;
             fin = nuevo;
@@ -53,8 +50,6 @@ public:
         cout << "Elemento " << valor << " insertado." << endl;
     }
 
-
-    // Mostrar lista desde el inicio
     void mostrarAdelante() {
 
         if (inicio == nullptr) {
@@ -79,8 +74,6 @@ public:
         cout << " -> NULL" << endl;
     }
 
-
-    // Mostrar lista desde el final
     void mostrarAtras() {
 
         if (fin == nullptr) {
@@ -105,8 +98,6 @@ public:
         cout << " -> NULL" << endl;
     }
 
-
-    // Buscar un elemento
     void buscar(int valor) {
 
         Nodo* actual = inicio;
@@ -126,8 +117,6 @@ public:
              << " no se encuentra en la lista." << endl;
     }
 
-
-    // Eliminar un elemento
     void eliminar(int valor) {
 
         Nodo* actual = inicio;
@@ -141,7 +130,6 @@ public:
             return;
         }
 
-        // Conectar el nodo anterior
         if (actual->anterior != nullptr) {
             actual->anterior->siguiente = actual->siguiente;
         }
@@ -149,7 +137,6 @@ public:
             inicio = actual->siguiente;
         }
 
-        // Conectar el nodo siguiente
         if (actual->siguiente != nullptr) {
             actual->siguiente->anterior = actual->anterior;
         }
@@ -162,8 +149,6 @@ public:
         cout << "Elemento " << valor << " eliminado." << endl;
     }
 
-
-    // Destructor
     ~ListaDoble() {
 
         Nodo* actual = inicio;
